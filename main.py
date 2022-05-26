@@ -102,8 +102,8 @@ def open_calc_window():
     df = pd.read_csv(filename, sep='\t', header=0, index_col=0, decimal=',')
     new = tkinter.Toplevel()
     new.title("calc")
-    new.geometry("200x400")
-    label = tkinter.Label(new, text="Podaj wartość U[V]", font=20, fg="black")
+    new.geometry("300x100")
+    label = tkinter.Label(new, text="Podaj wartość U[V]", font=20, fg="black",anchor = 'w')
     label.pack(side=tkinter.RIGHT)
 
     def calc():
@@ -125,11 +125,11 @@ def open_calc_window():
         new2.geometry("1000x50")
         label2 = tkinter.Label(new2, text=" Wartość V[m/s] = " + str(res_v) + " Wartość F[kN] = " + str(res_f), font=20,
                                fg="black")
-        label2.pack()
+        label2.pack(side=tkinter.TOP)
 
     button_new = tkinter.Button(master=new, text="oblicz", command=calc)
     button_new.pack(side=tkinter.BOTTOM)
-    e = tkinter.Entry(master=new, width=40)
+    e = tkinter.Entry(master=new, width=20)
     e.pack(side=tkinter.LEFT)
 
 
